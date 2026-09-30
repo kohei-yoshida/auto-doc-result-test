@@ -7,4 +7,4 @@
 
 Choose **Clear** to empty both inputs and reset the result. If the second number is zero when dividing, the calculator displays `Cannot divide by zero.`
 
-Additionally, pressing the Enter key while focused on either number input performs an addition of the two numbers, displaying the result or an error message if inputs are invalid.
+Additionally, pressing the Enter key while focused on either number input always performs addition of the two numbers, regardless of the previously selected operation, displaying the result or an error message if inputs are invalid.
