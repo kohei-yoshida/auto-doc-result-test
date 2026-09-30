@@ -10,7 +10,7 @@ This repository's `main` branch is the documentation source of truth for the [ca
 - `changes/issue-xxx.md`: issue-oriented change notes
 - `templates/`: guidance for new feature pages and change notes
 
-The Markdown-first layout keeps the PoC minimal and makes a later `main → static-site build → hosting` pipeline straightforward.
+The Markdown-first layout keeps the PoC minimal and makes a later `main  static-site build  hosting` pipeline straightforward.
 
 ## Setup
 
@@ -18,7 +18,7 @@ Repository administrators must configure:
 
 - Secret `OPENAI_API_KEY`: OpenAI project API key used for review-driven revisions.
 - Optional repository variable `OPENAI_MODEL`; default is `gpt-4.1-mini`.
-- Actions setting **Workflow permissions → Read and write permissions** so `GITHUB_TOKEN` can update the PR branch.
+- Actions setting **Workflow permissions  Read and write permissions** so `GITHUB_TOKEN` can update the PR branch.
 - Branch protection on `main`: require a PR and at least one human approval; do not allow automation to bypass protection.
 
 The source repository separately needs an `AUTO_DOC_GITHUB_TOKEN` with access to create branches and PRs here. No secret value belongs in source control.
@@ -41,3 +41,11 @@ python -m unittest discover -s test -p 'test_*.py'
 ```
 
 End-to-end verification requires Secrets: merge a source PR that closes an issue, confirm this repository receives a Docs PR, add a line-level review comment, and confirm the same branch receives one new automation commit.
+
+## Calculator
+
+Open `index.html` through any static web server. It supports add, subtract, multiply, divide, clear, invalid-input feedback, and a dedicated divide-by-zero error. Pressing Enter in either number input performs addition.
+
+```sh
+npm test
+```
